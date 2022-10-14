@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GuessNumber</string>
+    <string name="etNombre">Nombre del jugador:</string>
+    <string name="etNumeroIntentos">Número de intentos:</string>
+    <string name="btnJugar">COMENZAR</string>
+    <string name="etNumeroIntroducido">Introduce un número:</string>
+    <string name="errorEditTextVacio">Falta introducir algún valor</string>
+    <string name="etPosibleNumero">Introduce el número que piensas que es:</string>
+    <string name="btnProbarNumero">PROBAR</string>
+    <string name="btnVolverAIntentar">VOLVER A INTENTAR</string>
+    <string name="numeroMenor">El número a adivinar es menor que el introducido</string>
+    <string name="numeroMayor">El número a adivinar es mayor que el introducido</string>
+    <string name="hasGanado">HAS ACERTADO!!</string>
+    <string name="hasPerdido">HAS PERDIDO :(</string>
+    <string name="intentosAgotados">Ya no te quedan más intentos</string>
+</resources>

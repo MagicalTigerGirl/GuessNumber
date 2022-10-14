@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layoutDescription="@xml/activity_play_scene"
+    tools:context=".iu.PlayActivity">
+
+    <EditText
+        android:id="@+id/etPosibleNumero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginTop="50dp"
+        android:text=""
+        android:inputType="number"
+        android:hint="@string/etPosibleNumero"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/tvPrueba"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:autofillHints=""
+        android:hint=""
+        android:inputType=""
+        android:minHeight="48dp"
+        android:text="" />
+
+    <Button
+        android:onClick="adivinarNumero"
+        android:id="@+id/btnProbarNumero"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnProbarNumero" />
+
+    <Button
+        android:onClick="volverAIntentar"
+        android:id="@+id/btnVolverAIntentar"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnVolverAIntentar" />
+
+</LinearLayout>
