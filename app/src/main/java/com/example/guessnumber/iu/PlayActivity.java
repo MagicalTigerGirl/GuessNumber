@@ -21,12 +21,16 @@ import com.example.guessnumber.data.Information;
 import com.example.guessnumber.data.InformationFinal;
 
 public class PlayActivity extends AppCompatActivity {
+    /**
+     * La Activity en donde se juega, el jugador debe introducir un número comprendido entre 0 y 100 y para comprobar si es el número correcto debe darle al botón.
+     * Para volver a intentarlo debe darle al botón "voler a intentar", ya que el botón "probar" queda deshabilitada hasta que pulsa este botón.
+     * Cuando acierta el número o se queda sin intentos salta a la Activity final
+     * */
 
     private Integer numeroIntentos = 0;
     Random random = new Random();
     private Integer numeroAAdivinar = random.nextInt((100 - 0) + 1);
     private Integer numeroIntroducido = 0;
-    //private String acertado = "false";
     private Integer acertado = 0;
 
 
@@ -105,12 +109,12 @@ public class PlayActivity extends AppCompatActivity {
 
     public void numeroAAdivinarMenor()
     {
-        tvPrueba.setText(getResources().getString(R.string.numeroMenor) + " Numero de intentos: " + numeroIntentos);
+        tvPrueba.setText(getResources().getString(R.string.numeroMenor) + " " + numeroIntentos);
     }
 
     public void numeroAAdivinarMayor()
     {
-        tvPrueba.setText(getResources().getString(R.string.numeroMayor) + " Numero de intentos: " + numeroIntentos);
+        tvPrueba.setText(getResources().getString(R.string.numeroMayor) + " " + numeroIntentos);
     }
 
     public void UltimaActivity()
@@ -118,7 +122,7 @@ public class PlayActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         Information information = bundle.getParcelable("information");
 
-        InformationFinal informationFinal = new InformationFinal(information.getUsuario(), (Integer.parseInt(information.getIntentos())-numeroIntentos), acertado);
+        InformationFinal informationFinal = new InformationFinal(information.getUsuario(), (Integer.parseInt(information.getIntentos())-numeroIntentos),numeroAAdivinar, acertado);
         bundle.putParcelable("informationFinal", informationFinal);
 
         Intent intent = new Intent(this, EndPlayActivity.class);

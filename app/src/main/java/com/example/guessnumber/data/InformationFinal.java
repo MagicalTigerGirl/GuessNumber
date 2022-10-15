@@ -10,11 +10,13 @@ import java.io.Serializable;
 public class InformationFinal implements Serializable, Parcelable {
     private String usuario;
     private Integer intentos;
+    private Integer numero;
     private Integer acertado;
 
-    public InformationFinal(String usuario, int intentos, Integer acertado) {
+    public InformationFinal(String usuario, Integer intentos, Integer numero, Integer acertado) {
         this.usuario = usuario;
         this.intentos = intentos;
+        this.numero = numero;
         this.acertado = acertado;
     }
 
@@ -34,6 +36,14 @@ public class InformationFinal implements Serializable, Parcelable {
         this.intentos = intentos;
     }
 
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
     public Integer getAcertado() {
         return acertado;
     }
@@ -47,6 +57,7 @@ public class InformationFinal implements Serializable, Parcelable {
     protected InformationFinal(Parcel in){
         usuario=in.readString();
         intentos= Integer.valueOf(in.readString());
+        numero= Integer.valueOf(in.readString());
         acertado= Integer.valueOf(in.readString());
     }
 
@@ -77,6 +88,7 @@ public class InformationFinal implements Serializable, Parcelable {
     public void writeToParcel(Parcel dest, int i) {
         dest.writeString(usuario);
         dest.writeString(String.valueOf(intentos));
+        dest.writeString(String.valueOf(numero));
         dest.writeString(String.valueOf(acertado));
     }
 

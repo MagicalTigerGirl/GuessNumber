@@ -17,6 +17,10 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 
 public class ConfigActivity extends AppCompatActivity {
+    /**
+     * Activity en donde introducimos los datos del jugador y los intentos que tiene para adivinar el número.
+     * Ambos valores deben estar introducidos antes de clicar en el botón para comenzar a jugar, si falta algún valor salta un mensaje y no funciona el botón
+     * */
 
     private EditText etNombre;
     private EditText etNumeroIntentos;

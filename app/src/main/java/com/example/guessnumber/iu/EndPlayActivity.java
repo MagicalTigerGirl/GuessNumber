@@ -12,9 +12,12 @@ import com.example.guessnumber.data.InformationFinal;
 
 public class EndPlayActivity extends AppCompatActivity {
 
+    /**
+     * Es la Activity final, donde muestra todos los resultados y si el jugador ha adivinado el número o no*/
+
     private TextView tvResultado;
-    private TextView tvUsuario;
-    private TextView tvIntentos;
+    private TextView tvDescripcionResultado;
+    private Integer numero = 0;
     private Integer resultado = 0;
 
     @Override
@@ -22,8 +25,7 @@ public class EndPlayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end_play);
         tvResultado = findViewById(R.id.tvResultado);
-        tvUsuario = findViewById(R.id.tvUsuario);
-        tvIntentos = findViewById(R.id.tvIntentos);
+        tvDescripcionResultado = findViewById(R.id.tvDescripcionResultado);
 
         Bundle bundle = getIntent().getExtras();
         InformationFinal informationFinal = bundle.getParcelable("informationFinal");
@@ -31,11 +33,12 @@ public class EndPlayActivity extends AppCompatActivity {
         if(informationFinal.getAcertado() == 1)
         {
             tvResultado.setText(getResources().getString(R.string.hasGanado));
-            tvIntentos.setText("Has consumido" + informationFinal.getIntentos());
+            tvDescripcionResultado.setText(" " + informationFinal.getUsuario() + getResources().getString(R.string.elNumeroEra) + " " + informationFinal.getNumero() + " " + getResources().getString(R.string.hasConsumido) + " " + informationFinal.getIntentos() + " " + getResources().getString(R.string.intentos));
         }
         else
         {
             tvResultado.setText(getResources().getString(R.string.hasPerdido));
+            tvDescripcionResultado.setText(" " + informationFinal.getUsuario() + getResources().getString(R.string.elNumeroEra) + " " + informationFinal.getNumero());
         }
 
 
